@@ -1,4 +1,4 @@
-requirre 'optparse'
+require 'optparse'
 
 module RepeatTest
   module Parser
@@ -11,8 +11,9 @@ module RepeatTest
         opts.on("-i", "--iterations [ITERATIONS]", Integer, "Number of iterations") do |iterations|
           options[:iterations] = iterations
         end
-      end.parse!
+      end.parse!(args)
 
       options
     end
   end
+end
