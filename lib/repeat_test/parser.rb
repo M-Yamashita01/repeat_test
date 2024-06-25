@@ -11,6 +11,10 @@ module RepeatTest
         opts.on("-i", "--iterations [ITERATIONS]", Integer, "Number of iterations") do |iterations|
           options[:iterations] = iterations
         end
+
+        opts.on("-f", "--files [FILES]", Array, "Files or directories to run") do |files|
+          options[:files] = files
+        end
       end.parse!(args)
 
       options
