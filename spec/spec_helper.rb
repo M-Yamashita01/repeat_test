@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require "repeat_test"
+require "parser"
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure
