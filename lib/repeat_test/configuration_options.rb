@@ -12,6 +12,8 @@ module RepeatTest
 
     def organize_options
       @options ||= Parser.parse(@args)
+    rescue OptionParser::InvalidOption => e
+      abort "Please use --help for a listing of valid options"
     end
   end
 end
