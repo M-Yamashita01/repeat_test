@@ -3,12 +3,27 @@
 module RepeatTest
   class CLI
     def self.run
-      files = ARGV
-      5.times do |i|
+      new(ARGV).run
+    end
+
+    def initialize(args)
+      @args = args
+    end
+
+    def run
+      configuration_options = ConfigurationOptions.new(@args)
+      options = configuration_options.options
+
+      files = options[:files].join(' ')
+      options[:iterations].to_i.times do |i|
         puts "Running RSpec iteration ##{i + 1}"
 
-        system("bundle exec rspec #{files.join(' ')}")
+        run_rspec_command(files)
       end
+    end
+
+    def run_rspec_command(files)
+      system("bundle exec rspec #{files}")
     end
   end
 end
