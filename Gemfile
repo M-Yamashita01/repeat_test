@@ -12,6 +12,7 @@ gem "rspec-core", "~> 3.0"
 group :development, :test do
   gem "debug"
   gem "rspec", "~> 3.0"
+  gem "rspec_junit_formatter", require: false
   gem "rubocop", "~> 1.7"
 
   path = File.expand_path(__dir__)
