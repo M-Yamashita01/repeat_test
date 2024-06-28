@@ -1,5 +1,7 @@
+# frozen_string_literal: true
 
 module RepeatTest
+  # ConfigurationOptions class
   class ConfigurationOptions
     attr_accessor :options
 
@@ -12,7 +14,7 @@ module RepeatTest
 
     def organize_options
       @options ||= Parser.parse(@args)
-    rescue OptionParser::InvalidOption => e
+    rescue OptionParser::InvalidOption
       abort "Please use --help for a listing of valid options"
     end
   end

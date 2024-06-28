@@ -1,8 +1,13 @@
+# frozen_string_literal: true
+
 require "optparse"
 require "optionparser"
 
 module RepeatTest
+  # Parser class to parse the command line arguments
   class Parser < RSpec::Core::Parser
+    # rubocop:disable Metrics/MethodLength
+    # rubocop:disable Metrics/AbcSize
     def self.parse(args)
       options = {}
       begin
@@ -17,7 +22,7 @@ module RepeatTest
             options[:files] = files
           end
         end.parse!(args)
-      rescue OptionParser::InvalidOption => e
+      rescue OptionParser::InvalidOption
         # nothing
       end
 
@@ -29,5 +34,7 @@ module RepeatTest
       rspec_core_options = super(args)
       options.merge(rspec_core_options)
     end
+    # rubocop:enable Metrics/MethodLength
+    # rubocop:enable Metrics/AbcSize
   end
 end
