@@ -1,20 +1,31 @@
 # frozen_string_literal: true
 
-require 'spec_helper'
+require "spec_helper"
 
 RSpec.describe Parser do
-  describe '#parse' do
+  describe "#parse" do
+    let(:args) do
+      ["-i", "10", "-f", "spec/repeat_test/parser_spec.rb:99", "--format", "documentation", "--seed", "1000"]
+    end
 
-    let(:args) { ['-i', '10', '-f', 'spec/repeat_test/parser_spec.rb:99'] }
-
-    it 'parses the iterations option' do
+    it "parses the iterations option" do
       options = RepeatTest::Parser.parse(args)
       expect(options[:iterations]).to eq(10)
     end
 
-    it 'parses the files option' do
+    it "parses the files option" do
       options = RepeatTest::Parser.parse(args)
-      expect(options[:files]).to eq(['spec/repeat_test/parser_spec.rb:99'])
+      expect(options[:files]).to eq(["spec/repeat_test/parser_spec.rb:99"])
+    end
+
+    it "parses the files or directories to run" do
+      options = RepeatTest::Parser.parse(args)
+      expect(options[:files_or_directories_to_run]).to eq(["documentation"])
+    end
+
+    it "parses the seed option" do
+      options = RepeatTest::Parser.parse(args)
+      expect(options[:order]).to eq("rand:1000")
     end
   end
 end

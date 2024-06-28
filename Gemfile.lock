@@ -73,6 +73,7 @@ DEPENDENCIES
   rake (~> 13.0)
   repeat_test!
   rspec (~> 3.0)
+  rspec-core (~> 3.0)
   rubocop (~> 1.7)
 
 BUNDLED WITH
