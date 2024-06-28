@@ -1,6 +1,6 @@
-name: Ruby
+name: RuboCop
 
-on: [push,pull_request]
+on: [pull_request]
 
 jobs:
   build:
@@ -10,7 +10,7 @@ jobs:
     - name: Set up Ruby
       uses: ruby/setup-ruby@v1
       with:
-        ruby-version: 2.6.10
+        ruby-version: 3.1.0
         bundler-cache: true
-    - name: Run the default task
-      run: bundle exec rake
+    - name: Run RuboCop
+      run: bundle exec rubocop
