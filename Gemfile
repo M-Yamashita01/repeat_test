@@ -12,6 +12,6 @@ group :development, :test do
   gem "rspec", "~> 3.0"
   gem "rubocop", "~> 1.7"
 
-  path = File.expand_path("./lib", __FILE__)
+  path = File.expand_path(__dir__)
   $LOAD_PATH.unshift(path) unless $LOAD_PATH.include?(path)
 end
