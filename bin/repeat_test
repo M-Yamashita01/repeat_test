@@ -1,5 +1,6 @@
 #!/usr/bin/env ruby
+# frozen_string_literal: true
 
-require 'repeat_test'
+require "repeat_test"
 
-RepeatTest::CLI.run
+RepeatTest::CLI.run(ARGV)
