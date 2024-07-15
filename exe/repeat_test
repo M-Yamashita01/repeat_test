@@ -3,4 +3,4 @@
 
 require "repeat_test"
 
-RepeatTest::CLI.run
+RepeatTest::CLI.run(ARGV)

@@ -1,11 +1,10 @@
 # frozen_string_literal: true
 
-require "optparse"
-require "optionparser"
+require "rspec"
 
 module RepeatTest
   # Parser class to parse the command line arguments
-  class Parser < RSpec::Core::Parser
+  class Parser < ::RSpec::Core::Parser
     # rubocop:disable Metrics/MethodLength
     # rubocop:disable Metrics/AbcSize
     def self.parse(args)
