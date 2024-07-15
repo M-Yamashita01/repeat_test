@@ -8,7 +8,7 @@ module RepeatTest
     # rubocop:disable Metrics/MethodLength
     # rubocop:disable Metrics/AbcSize
     def self.parse(args)
-      options = { iterations: 1 }
+      options = { iterations: 1, files: ["spec"] }
       begin
         OptionParser.new do |opts|
           opts.banner = "Usage: repeat_test [options] files or directories"
