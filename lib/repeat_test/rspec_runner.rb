@@ -9,7 +9,7 @@ module RepeatTest
     end
 
     def run
-      system("bundle exec rspec #{files} #{options}")
+      system("bundle exec rspec #{@files}")
     end
   end
 end
