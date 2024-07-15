@@ -27,5 +27,16 @@ RSpec.describe Parser do
       options = RepeatTest::Parser.parse(args)
       expect(options[:order]).to eq("rand:1000")
     end
+
+    context "when no iterations are provided" do
+      let(:args) do
+        ["-f", "spec/repeat_test/parser_spec.rb:99", "--format", "documentation", "--seed", "1000"]
+      end
+
+      it "defaults to 1 iteration" do
+        options = RepeatTest::Parser.parse(args)
+        expect(options[:iterations]).to eq(1)
+      end
+    end
   end
 end
