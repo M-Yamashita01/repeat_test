@@ -22,8 +22,17 @@ Or install it yourself as:
 
 ## Usage
 ```
-# Using the files specified by the -f option and run rspec command for n times specified by the -i option.
-$ repeat_test -i 3 -f spec_file
+# Default: Run all spec files once (i.e., those matching spec/**/*_spec.rb)
+$ repeat_test
+
+# Run all spec files twice (i.e., those matching spec/**/*_spec.rb)
+$ repeat_test -i 2
+
+# Run specified spec files twice
+$ repeat_test -i 2 -f test_spec.rb test2_spec.rb
+
+# Run specified spec directories twice
+$ repeat_test -i 2 -f spec_dir
 ```
 
 ## Development
