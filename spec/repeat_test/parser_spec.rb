@@ -38,5 +38,16 @@ RSpec.describe Parser do
         expect(options[:iterations]).to eq(1)
       end
     end
+
+    context "when no files are provided" do
+      let(:args) do
+        ["-i", "10", "--format", "documentation", "--seed", "1000"]
+      end
+
+      it "defaults to spec" do
+        options = RepeatTest::Parser.parse(args)
+        expect(options[:files]).to eq(["spec"])
+      end
+    end
   end
 end
